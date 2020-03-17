@@ -18,5 +18,4 @@ using namespace stellar;
     return count;\
 }\
 
-
 VTABLESIZE(SCPDriver)
