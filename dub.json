@@ -13,7 +13,8 @@
     "excludedSourceFiles": [ "source/cpp/*.d" ],
     "preGenerateCommands": [ "source/cpp/build.d" ],
     "sourceFiles": [
-        "source/cpp/build/SCPDriver.o"
+        "source/cpp/build/SCPDriver.o",
+        "source/cpp/build/DVTableChecks.o"
     ],
     "lflags": ["-lstdc++"],
     "buildRequirements": [ "allowWarnings" ],
