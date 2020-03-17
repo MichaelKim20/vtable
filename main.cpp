@@ -2,6 +2,13 @@
 #include <cstdio>
 #include <cstring>
 
+class Blank {
+    public:
+        void v()
+        {
+            printf("Hello from a method in Blank!\n");
+        }
+};
 class Foo {
     public:
         virtual void v()
@@ -10,7 +17,7 @@ class Foo {
         }
 };
 
-class FooBar : public Foo {
+class FooBar {
     public:
         virtual void v()
         {
@@ -21,7 +28,7 @@ class FooBar : public Foo {
 template <class T>
 size_t countVtableOf(T* a)
 {
-    static_assert(a != NULL);
+    //static_assert(a != NULL);
 
     long **vtable = (long **)a;
     int idx = 0;
@@ -67,6 +74,11 @@ int main(int argc, char **argv)
 
     int idx;
     size_t count;
+
+    Blank blank;
+    Blank *blankptr = (Blank *)&blank;
+    count = countVtableOf(&blankptr);
+    printf("Length of Blank' VTABLE: %lu\n", count);
 
     count = countVtableOf(&foobar);
     printf("Length of FooBar VTABLE: %lu\n", count);
