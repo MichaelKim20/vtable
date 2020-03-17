@@ -1,0 +1,31 @@
+{
+    "name": "agora",
+    "description": "Node implementation for BOA CoinNet",
+
+    "license": "MIT",
+    "authors": [
+        "Mathias 'Geod24' Lang"
+    ],
+    "copyright": "Copyright © 2019, BOS Platform Foundation Korea",
+
+    "targetType": "executable",
+    "targetPath": "build",
+    "excludedSourceFiles": [ "source/cpp/*.d" ],
+    "preGenerateCommands": [ "source/cpp/build.d" ],
+    "sourceFiles": [
+        "source/cpp/build/SCPDriver.o"
+    ],
+    "lflags": ["-lstdc++"],
+    "buildRequirements": [ "allowWarnings" ],
+
+    "configurations": [
+        {
+            "name": "server",
+            "targetName": "sample",
+            "mainSourceFile": "source/sample/main.d"
+        }
+    ],
+
+    "dependencies": {
+    }
+}
